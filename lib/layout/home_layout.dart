@@ -4,7 +4,6 @@ import 'package:news/screens/category.dart';
 import 'package:news/screens/news_screen.dart';
 import 'package:news/screens/widgets/DrawerWidgets.dart';
 import 'package:news/screens/widgets/search_delegate.dart';
-import 'package:news/shared/network/remote/api_manager.dart';
 import 'package:news/shared/styles/app_colors.dart';
 
 class HomeLayout extends StatefulWidget {

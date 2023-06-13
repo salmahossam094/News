@@ -1,7 +1,6 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
-import 'package:news/models/NewsResponse.dart';
 import 'package:news/models/SourceResponse.dart';
 import 'package:news/screens/news_details.dart';
 import 'package:news/screens/widgets/news_item.dart';

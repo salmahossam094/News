@@ -78,7 +78,7 @@ class _NewsDetailsState extends State<NewsDetails> {
                           ),
                           Spacer(),
                           Text(
-                            article.publishedAt!.substring(0, 10) ?? '',
+                            article.publishedAt!.substring(0, 10),
                             style: Theme.of(context)
                                 .textTheme
                                 .bodySmall!
