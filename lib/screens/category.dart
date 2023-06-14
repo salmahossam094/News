@@ -1,16 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:news/models/category_model.dart';
 import 'package:news/screens/widgets/category_item.dart';
 
 // ignore: must_be_immutable
 class Category extends StatelessWidget {
-  var categories = CategoryModel.getCategories();
   Function onCategorySelected;
 
   Category(this.onCategorySelected);
 
+   List<CategoryModel> categories= CategoryModel.getCategories();
+  // late List<String> names;
+
   @override
   Widget build(BuildContext context) {
+    // names = [
+    //   AppLocalizations.of(context)!.sports,
+    //   AppLocalizations.of(context)!.business,
+    //   AppLocalizations.of(context)!.health,
+    //   AppLocalizations.of(context)!.science,
+    //   AppLocalizations.of(context)!.general,
+    //   AppLocalizations.of(context)!.technology,
+    // ];
+    // categories = CategoryModel.getCategories();
     return Stack(
       children: [
         Image.asset(
@@ -23,7 +35,7 @@ class Category extends StatelessWidget {
           child: Column(
             children: [
               Text(
-                'Pick your category of interest',
+                AppLocalizations.of(context)!.pick_your_category_of_interest,
                 style: Theme.of(context)
                     .textTheme
                     .bodyMedium!

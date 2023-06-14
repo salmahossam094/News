@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:news/shared/styles/app_colors.dart';
 
 class DrawerWidget extends StatelessWidget {
@@ -18,7 +19,7 @@ class DrawerWidget extends StatelessWidget {
             color: AppColor.lightColor,
             child: Center(
                 child: Text(
-              "News App",
+              AppLocalizations.of(context)!.news,
               style: Theme.of(context)
                   .textTheme
                   .bodyMedium
@@ -42,7 +43,7 @@ class DrawerWidget extends StatelessWidget {
                       width: 10,
                     ),
                     Text(
-                      'Categories',
+                      AppLocalizations.of(context)!.category,
                       style: Theme.of(context)
                           .textTheme
                           .bodyMedium!
@@ -68,7 +69,7 @@ class DrawerWidget extends StatelessWidget {
                       width: 10,
                     ),
                     Text(
-                      'Settings',
+                      AppLocalizations.of(context)!.settings,
                       style: Theme.of(context)
                           .textTheme
                           .bodyMedium!

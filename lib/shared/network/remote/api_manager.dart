@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:http/http.dart';
 import 'package:http/http.dart' as http;
 import 'package:news/models/NewsResponse.dart';
@@ -10,7 +9,7 @@ import 'package:url_launcher/url_launcher.dart';
 class ApiManager {
   static Future<SourceResponse> getSources(String cat) async {
     Uri URL = Uri.https(
-        BASE, "/v2/top-headlines/sources", {"apiKey": APIKEY, "category": cat});
+        BASE, "/v2/top-headlines/sources", {"apiKey": APIKEY1, "category": cat});
     Response response = await http.get(URL);
     var responseJson = jsonDecode(response.body);
     SourceResponse sourceResponse = SourceResponse.fromJson(responseJson);
@@ -19,7 +18,7 @@ class ApiManager {
 
   static Future<NewsResponse> getNewsData(String sourceId) async {
     Uri URL = Uri.https(BASE, "/v2/everything", {
-      "apiKey": APIKEY,
+      "apiKey": APIKEY1,
       "sources": sourceId,
     });
     http.Response response = await http.get(URL);
@@ -30,7 +29,7 @@ class ApiManager {
 
   static Future<NewsResponse> search(word) async {
     Uri URL = Uri.https(BASE, "/v2/everything", {
-      "apiKey": APIKEY,
+      "apiKey": APIKEY1,
       "q": word,
     });
     http.Response response= await http.get(URL);

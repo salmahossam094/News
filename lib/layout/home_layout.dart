@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:news/models/category_model.dart';
 import 'package:news/screens/category.dart';
 import 'package:news/screens/news_screen.dart';
+import 'package:news/screens/settings.dart';
 import 'package:news/screens/widgets/DrawerWidgets.dart';
 import 'package:news/screens/widgets/search_delegate.dart';
 import 'package:news/shared/styles/app_colors.dart';
@@ -74,7 +75,12 @@ class _HomeLayoutState extends State<HomeLayout> {
     setState(() {});
   }
 
-  onSettingDrawer() {}
+  onSettingDrawer() {
+    Navigator.pushNamed(context, Settings.routeName);
+    setState(() {
+
+    });
+  }
 // onSearchClicked(){
 //   return SearchWidget();
 // }

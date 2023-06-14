@@ -40,6 +40,8 @@ class _NewsScreenState extends State<NewsScreen> {
               return Column(
                 children: [
                   Text('errorrr!'),
+                  Text(snapshot.data?.message??''
+                  ),
                   ElevatedButton(onPressed: () {}, child: Text('try again'))
                 ],
               );

@@ -1,0 +1,15 @@
+{
+  "settings": "الاعدادات",
+  "language": "اللغة",
+  "arabic": "العربية",
+  "english": "الانجليزية",
+  "category": "الفئات",
+  "sports": "الرياضة",
+  "business": "الأعمال",
+  "health": "الصحة",
+  "pick_your_category_of_interest": "اختر فئة اهتمامك",
+  "science": "العلوم",
+  "general": "العامة",
+  "technology": "التكنولوجيا",
+  "news": "تطبيق الاخبار"
+}
