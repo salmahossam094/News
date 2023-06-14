@@ -23,24 +23,21 @@ class MyThemeData {
           ),
           iconTheme: const IconThemeData(color: Colors.white, size: 30)),
     );
-  // static ThemeData darkTheme = ThemeData(
-  //   primaryColor: AppColor.darkColor,
-  //   brightness: Brightness.dark,
-  //   scaffoldBackgroundColor: AppColor.darkBlueColor,
-  //   floatingActionButtonTheme: const FloatingActionButtonThemeData(
-  //       backgroundColor: AppColor.darkColor),
-  //   appBarTheme: const AppBarTheme(
-  //       backgroundColor: AppColor.lightColor,
-  //       centerTitle: false,
-  //       iconTheme: IconThemeData(color: AppColor.darkColor, size: 30)),
-  //   bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-  //     backgroundColor: Colors.transparent,
-  //     elevation: 0,
-  //     selectedItemColor: AppColor.lightColor,
-  //   ),
-  //   textTheme: TextTheme(
-  //       bodyLarge: AppStyles.exo22White(),
-  //       bodyMedium: AppStyles.poppins18LightBlueDark(),
-  //       bodySmall: AppStyles.roboto12White())
-  // );
+  static ThemeData darkTheme = ThemeData(
+    primaryColor: AppColor.lightColor,
+    brightness: Brightness.dark,
+
+
+    appBarTheme: const AppBarTheme(
+        backgroundColor: AppColor.lightColor,
+        centerTitle: false,
+        iconTheme: IconThemeData(color: Colors.white, size: 30)),
+    textTheme: TextTheme(
+        bodyLarge: AppStyles.exo22White(),
+        bodyMedium: AppStyles.poppins24Black().copyWith(color: Colors.white),
+        bodySmall: AppStyles.poppins14Light().copyWith(color: Colors.white)
+    ),
+
+
+  );
 }

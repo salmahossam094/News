@@ -15,6 +15,7 @@ class Settings extends StatefulWidget {
 
 class _SettingsState extends State<Settings> {
   int selectedValue = 1;
+  int selectedValueth = 1;
 
   @override
   Widget build(BuildContext context) {
@@ -68,6 +69,53 @@ class _SettingsState extends State<Settings> {
                       },
                       value: 2,
                       child: Text(AppLocalizations.of(context)!.arabic),
+                    )
+                  ],
+                  onChanged: (value) {
+                    selectedValue = value!;
+                    setState(() {});
+                  },
+                ),
+              ),
+            ),
+            Text(
+             'Theme',
+              style: Theme.of(context)
+                  .textTheme
+                  .bodyMedium!
+                  .copyWith(color: AppColor.lightColor),
+            ),
+            Container(
+              margin: const EdgeInsets.all(5),
+              padding:
+              const EdgeInsets.only(bottom: 4, top: 4, left: 10, right: 10),
+              decoration:
+              BoxDecoration(border: Border.all(color: AppColor.lightColor)),
+              child: DropdownButtonHideUnderline(
+                child: DropdownButton(
+                  isExpanded: true,
+                  value: pro.mode == ThemeMode.light ? selectedValue = 1 : selectedValue = 2,
+                  onTap: () {},
+                  items: [
+                    DropdownMenuItem(
+                      onTap: () {
+                        pro.changeTheme(ThemeMode.light);
+                        setState(() {
+
+                        });
+                      },
+                      value: 1,
+                      child: Text('Light'),
+                    ),
+                    DropdownMenuItem(
+                      onTap: () {
+                        pro.changeTheme(ThemeMode.dark);
+                        setState(() {
+
+                        });
+                      },
+                      value: 2,
+                      child: Text('Dark'),
                     )
                   ],
                   onChanged: (value) {
