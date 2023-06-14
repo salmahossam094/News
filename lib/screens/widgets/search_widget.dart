@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:news/screens/news_details.dart';
 import 'package:news/shared/network/remote/api_manager.dart';
 import 'package:news/shared/styles/app_colors.dart';
@@ -24,6 +25,23 @@ class SearchWidget extends StatelessWidget {
             if (snapshot.connectionState == ConnectionState.waiting) {
               return Center(child: CircularProgressIndicator());
             }
+            if (snapshot.data!.totalResults == 0) {
+              return Expanded(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      FontAwesomeIcons.faceFrown,
+                      size: 70,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child: Text("Sorry, we couldn't find any results ",style: Theme.of(context).textTheme.bodyMedium,),
+                    )
+                  ],
+                ),
+              );
+            }
             var searchItems = snapshot.data?.articles ?? [];
             return Expanded(
               child: Column(
@@ -33,14 +51,16 @@ class SearchWidget extends StatelessWidget {
                     child: ListView.builder(
                       itemCount: searchItems.length,
                       itemBuilder: (context, index) {
-                        return  InkWell(
+                        return InkWell(
                           onTap: () {
-                            Navigator.pushNamed(context, NewsDetails.routeName,arguments: searchItems[index]);
+                            Navigator.pushNamed(context, NewsDetails.routeName,
+                                arguments: searchItems[index]);
                           },
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Card(
-                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(25)),
                               child: Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Column(
@@ -54,13 +74,17 @@ class SearchWidget extends StatelessWidget {
                                         height: 160,
                                         width: double.infinity,
                                         fit: BoxFit.fill,
-                                        imageUrl: searchItems[index].urlToImage ?? '',
-                                        progressIndicatorBuilder: (context, url, downloadProgress) =>
-                                            Center(
-                                              child: CircularProgressIndicator(
-                                                  value: downloadProgress.progress),
-                                            ),
-                                        errorWidget: (context, url, error) => Icon(Icons.error),
+                                        imageUrl: searchItems[index]
+                                                .urlToImage ??
+                                            'https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg',
+                                        progressIndicatorBuilder:
+                                            (context, url, downloadProgress) =>
+                                                Center(
+                                          child: CircularProgressIndicator(
+                                              value: downloadProgress.progress),
+                                        ),
+                                        errorWidget: (context, url, error) =>
+                                            Icon(Icons.error),
                                       ),
                                     ),
                                     SizedBox(
@@ -68,9 +92,40 @@ class SearchWidget extends StatelessWidget {
                                     ),
                                     Text(
                                       searchItems[index].title ?? '',
-                                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontSize:14,color: AppColor.lightColor ),
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .bodyMedium!
+                                          .copyWith(
+                                              fontSize: 14,
+                                              color: AppColor.lightColor),
                                       maxLines: 2,
                                     ),
+                                    Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Row(
+                                        children: [
+                                          Text(
+                                            searchItems[index].source?.name ??
+                                                '',
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .bodySmall!
+                                                .copyWith(color: Colors.grey),
+                                          ),
+                                          Spacer(),
+                                          Text(
+                                            searchItems[index]
+                                                    .publishedAt
+                                                    ?.substring(0, 10) ??
+                                                "",
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .bodySmall!
+                                                .copyWith(color: Colors.grey),
+                                          )
+                                        ],
+                                      ),
+                                    )
                                   ],
                                 ),
                               ),
