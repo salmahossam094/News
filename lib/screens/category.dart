@@ -9,20 +9,12 @@ class Category extends StatelessWidget {
 
   Category(this.onCategorySelected);
 
-   List<CategoryModel> categories= CategoryModel.getCategories();
+  List<CategoryModel> categories = CategoryModel.getCategories();
+
   // late List<String> names;
 
   @override
   Widget build(BuildContext context) {
-    // names = [
-    //   AppLocalizations.of(context)!.sports,
-    //   AppLocalizations.of(context)!.business,
-    //   AppLocalizations.of(context)!.health,
-    //   AppLocalizations.of(context)!.science,
-    //   AppLocalizations.of(context)!.general,
-    //   AppLocalizations.of(context)!.technology,
-    // ];
-    // categories = CategoryModel.getCategories();
     return Stack(
       children: [
         Image.asset(
@@ -31,18 +23,22 @@ class Category extends StatelessWidget {
           height: double.infinity,
         ),
         Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(10.0),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                AppLocalizations.of(context)!.pick_your_category_of_interest,
-                style: Theme.of(context)
-                    .textTheme
-                    .bodyMedium!
-                    .copyWith(fontWeight: FontWeight.w400),
+              Padding(
+                padding: const EdgeInsets.all(15.0),
+                child: Text(
+                  AppLocalizations.of(context)!.pick_your_category_of_interest,
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodyMedium!
+                      .copyWith(fontWeight: FontWeight.w400),
+                ),
               ),
               SizedBox(
-                height: 5,
+                height: 20,
               ),
               Expanded(
                 child: GridView.builder(
@@ -54,8 +50,8 @@ class Category extends StatelessWidget {
                       child: CategoryItem(categories[index], index)),
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
-                    mainAxisSpacing: 16,
-                    crossAxisSpacing: 16,
+                    mainAxisSpacing: 24,
+                    crossAxisSpacing: 15,
                   ),
                 ),
               )

@@ -6,6 +6,7 @@ import 'package:news/screens/settings.dart';
 import 'package:news/screens/widgets/DrawerWidgets.dart';
 import 'package:news/screens/widgets/search_delegate.dart';
 import 'package:news/shared/styles/app_colors.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HomeLayout extends StatefulWidget {
   HomeLayout({Key? key}) : super(key: key);
@@ -30,7 +31,7 @@ class _HomeLayoutState extends State<HomeLayout> {
         ),
         Scaffold(
           appBar: AppBar(
-            title:  Text(categoryModel == null ? "News APP" : categoryModel!.name,
+            title:  Text(categoryModel == null ? AppLocalizations.of(context)!.news : categoryModel!.name,
                     style: Theme.of(context).textTheme.bodyLarge),
             backgroundColor: AppColor.lightColor,
             shape: const RoundedRectangleBorder(

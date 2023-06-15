@@ -79,7 +79,7 @@ class _SettingsState extends State<Settings> {
               ),
             ),
             Text(
-             'Theme',
+             AppLocalizations.of(context)!.theme,
               style: Theme.of(context)
                   .textTheme
                   .bodyMedium!
@@ -94,7 +94,7 @@ class _SettingsState extends State<Settings> {
               child: DropdownButtonHideUnderline(
                 child: DropdownButton(
                   isExpanded: true,
-                  value: pro.mode == ThemeMode.light ? selectedValue = 1 : selectedValue = 2,
+                  value: pro.themeMode == ThemeMode.light ? selectedValue = 1 : selectedValue = 2,
                   onTap: () {},
                   items: [
                     DropdownMenuItem(
@@ -105,7 +105,7 @@ class _SettingsState extends State<Settings> {
                         });
                       },
                       value: 1,
-                      child: Text('Light'),
+                      child: Text(AppLocalizations.of(context)!.light),
                     ),
                     DropdownMenuItem(
                       onTap: () {
@@ -115,7 +115,7 @@ class _SettingsState extends State<Settings> {
                         });
                       },
                       value: 2,
-                      child: Text('Dark'),
+                      child: Text(AppLocalizations.of(context)!.dark),
                     )
                   ],
                   onChanged: (value) {

@@ -11,5 +11,10 @@
   "science": "Science",
   "general": "General",
   "technology": "Technology",
-  "news": "News App"
+  "news": "News App",
+  "sorry": "Sorry, we couldn't find any results ",
+  "total": "Total Results:",
+  "dark": "Dark",
+  "light": "Light",
+  "theme": "Theme"
 }

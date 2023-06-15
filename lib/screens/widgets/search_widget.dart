@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:news/screens/news_details.dart';
 import 'package:news/shared/network/remote/api_manager.dart';
@@ -36,7 +37,10 @@ class SearchWidget extends StatelessWidget {
                     ),
                     Padding(
                       padding: const EdgeInsets.all(20.0),
-                      child: Text("Sorry, we couldn't find any results ",style: Theme.of(context).textTheme.bodyMedium,),
+                      child: Text(
+                        AppLocalizations.of(context)!.sorry,
+                        style: Theme.of(context).textTheme.bodyMedium,
+                      ),
                     )
                   ],
                 ),
@@ -46,7 +50,8 @@ class SearchWidget extends StatelessWidget {
             return Expanded(
               child: Column(
                 children: [
-                  Text('Total results: ${searchItems.length}'),
+                  Text(
+                      '${AppLocalizations.of(context)!.total} ${searchItems.length}'),
                   Expanded(
                     child: ListView.builder(
                       itemCount: searchItems.length,
