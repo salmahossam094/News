@@ -41,21 +41,21 @@ class _TabsScreenState extends State<TabsScreen> {
         FutureBuilder(
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
-              return Center(child: CircularProgressIndicator());
+              return const Center(child: CircularProgressIndicator());
             }
             if (snapshot.hasError) {
               return Column(
                 children: [
-                  Text('error'),
-                  ElevatedButton(onPressed: () {}, child: Text('try again'))
+                  const Text('error'),
+                  ElevatedButton(onPressed: () {}, child: const Text('try again'))
                 ],
               );
             }
             if (snapshot.data?.status != 'ok') {
               return Column(
                 children: [
-                  Text('error'),
-                  ElevatedButton(onPressed: () {}, child: Text('try again'))
+                  const Text('error'),
+                  ElevatedButton(onPressed: () {}, child: const Text('try again'))
                 ],
               );
             }

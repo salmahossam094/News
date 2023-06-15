@@ -31,21 +31,21 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       builder: (context, child) => MaterialApp(
         locale: Locale(pro.language),
-        localizationsDelegates: [
+        localizationsDelegates: const [
           AppLocalizations.delegate, // Add this line
           GlobalMaterialLocalizations.delegate,
           GlobalWidgetsLocalizations.delegate,
           GlobalCupertinoLocalizations.delegate,
         ],
-        supportedLocales: [
+        supportedLocales: const [
           Locale('en'), // English
           Locale('ar'), // Spanish
         ],
         debugShowCheckedModeBanner: false,
         routes: {
-          HomeLayout.routeName: (context) => HomeLayout(),
-          NewsDetails.routeName: (context) => NewsDetails(),
-          Settings.routeName: (context) => Settings(),
+          HomeLayout.routeName: (context) => const HomeLayout(),
+          NewsDetails.routeName: (context) => const NewsDetails(),
+          Settings.routeName: (context) => const Settings(),
         },
         initialRoute: HomeLayout.routeName,
         theme: MyThemeData.lightTheme,

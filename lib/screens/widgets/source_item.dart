@@ -12,7 +12,7 @@ class SourceItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical:4,horizontal: 12),
+      padding: const EdgeInsets.symmetric(vertical:4,horizontal: 12),
       decoration: BoxDecoration(
         color: selected ? AppColor.lightColor: Colors.transparent,
         borderRadius: BorderRadius.circular(20),

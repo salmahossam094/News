@@ -9,7 +9,7 @@ import 'package:news/shared/styles/app_colors.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HomeLayout extends StatefulWidget {
-  HomeLayout({Key? key}) : super(key: key);
+  const HomeLayout({Key? key}) : super(key: key);
   static const String routeName = 'home-layout';
 
   @override
@@ -49,8 +49,8 @@ class _HomeLayoutState extends State<HomeLayout> {
                             context: context, delegate: MySearchDelegate());
 
                       },
-                      icon:  Icon(Icons.search))
-                  : Text('')
+                      icon:  const Icon(Icons.search))
+                  : const Text('')
             ],
           ),
           drawer: DrawerWidget(onCategoryDrawer, onSettingDrawer),

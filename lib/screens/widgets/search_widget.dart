@@ -19,19 +19,19 @@ class SearchWidget extends StatelessWidget {
           future: ApiManager.search(query),
           builder: (context, snapshot) {
             if (snapshot.hasError) {
-              return Column(
+              return const Column(
                 children: [Text('error')],
               );
             }
             if (snapshot.connectionState == ConnectionState.waiting) {
-              return Center(child: CircularProgressIndicator());
+              return const Center(child: CircularProgressIndicator());
             }
             if (snapshot.data!.totalResults == 0) {
               return Expanded(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(
+                    const Icon(
                       FontAwesomeIcons.faceFrown,
                       size: 70,
                     ),
@@ -72,7 +72,7 @@ class SearchWidget extends StatelessWidget {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     ClipRRect(
-                                      borderRadius: BorderRadius.only(
+                                      borderRadius: const BorderRadius.only(
                                           topLeft: Radius.circular(15),
                                           topRight: Radius.circular(15)),
                                       child: CachedNetworkImage(
@@ -89,10 +89,10 @@ class SearchWidget extends StatelessWidget {
                                               value: downloadProgress.progress),
                                         ),
                                         errorWidget: (context, url, error) =>
-                                            Icon(Icons.error),
+                                            const Icon(Icons.error),
                                       ),
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       height: 10,
                                     ),
                                     Text(
@@ -117,7 +117,7 @@ class SearchWidget extends StatelessWidget {
                                                 .bodySmall!
                                                 .copyWith(color: Colors.grey),
                                           ),
-                                          Spacer(),
+                                          const Spacer(),
                                           Text(
                                             searchItems[index]
                                                     .publishedAt

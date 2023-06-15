@@ -19,7 +19,7 @@ class _NewsDetailsState extends State<NewsDetails> {
     var article = ModalRoute.of(context)!.settings.arguments as Articles;
     return Scaffold(
       appBar: AppBar(
-        title: Text('News'),
+        title: const Text('News'),
         backgroundColor: AppColor.lightColor,
       ),
       body: Stack(
@@ -45,7 +45,7 @@ class _NewsDetailsState extends State<NewsDetails> {
                             fontWeight: FontWeight.w500,
                             color: AppColor.lightColor),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       ClipRRect(
@@ -61,10 +61,10 @@ class _NewsDetailsState extends State<NewsDetails> {
                                 value: downloadProgress.progress),
                           ),
                           errorWidget: (context, url, error) =>
-                              Icon(Icons.error),
+                              const Icon(Icons.error),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 5,
                       ),
                       Row(
@@ -76,7 +76,7 @@ class _NewsDetailsState extends State<NewsDetails> {
                                 .bodySmall!
                                 .copyWith(fontSize: 10, color: Colors.black45),
                           ),
-                          Spacer(),
+                          const Spacer(),
                           Text(
                             article.publishedAt!.substring(0, 10),
                             style: Theme.of(context)
@@ -90,7 +90,7 @@ class _NewsDetailsState extends State<NewsDetails> {
                         article.description ?? '',
                         style: Theme.of(context).textTheme.bodyMedium,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 5,
                       ),
                       Text(
@@ -109,7 +109,7 @@ class _NewsDetailsState extends State<NewsDetails> {
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
                               Container(
-                                decoration: BoxDecoration(
+                                decoration: const BoxDecoration(
                                     border: Border(
                                         bottom: BorderSide(
                                             color: AppColor.lightColor))),
@@ -122,11 +122,11 @@ class _NewsDetailsState extends State<NewsDetails> {
                                 ),
                               ),
                               Container(
-                                  decoration: BoxDecoration(
+                                  decoration: const BoxDecoration(
                                       border: Border(
                                           bottom: BorderSide(
                                               color: AppColor.lightColor))),
-                                  child: Icon(
+                                  child: const Icon(
                                     Icons.play_arrow_outlined,
                                     color: AppColor.lightColor,
                                     size: 20,

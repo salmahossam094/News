@@ -11,12 +11,12 @@ class CategoryItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.only(
-            topRight: Radius.circular(20), topLeft: Radius.circular(20),
-          bottomLeft: index.isEven?Radius.circular(20):Radius.circular(0),
-         bottomRight:  index.isOdd?Radius.circular(20):Radius.circular(0),
+            topRight: const Radius.circular(20), topLeft: const Radius.circular(20),
+          bottomLeft: index.isEven?const Radius.circular(20):const Radius.circular(0),
+         bottomRight:  index.isOdd?const Radius.circular(20):const Radius.circular(0),
         ),
         color: categoryModel.color,
       ),

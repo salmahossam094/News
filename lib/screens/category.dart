@@ -37,7 +37,7 @@ class Category extends StatelessWidget {
                       .copyWith(fontWeight: FontWeight.w400),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Expanded(
@@ -48,7 +48,7 @@ class Category extends StatelessWidget {
                         onCategorySelected(categories[index]);
                       },
                       child: CategoryItem(categories[index], index)),
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
                     mainAxisSpacing: 24,
                     crossAxisSpacing: 15,

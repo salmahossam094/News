@@ -20,7 +20,7 @@ class NewsItem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               ClipRRect(
-                borderRadius: BorderRadius.only(
+                borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(15),
                     topRight: Radius.circular(15)),
                 child: CachedNetworkImage(
@@ -33,10 +33,10 @@ class NewsItem extends StatelessWidget {
                         child: CircularProgressIndicator(
                             value: downloadProgress.progress),
                       ),
-                  errorWidget: (context, url, error) => Icon(Icons.error),
+                  errorWidget: (context, url, error) => const Icon(Icons.error),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Text(
@@ -44,7 +44,7 @@ class NewsItem extends StatelessWidget {
                 style: Theme.of(context).textTheme.bodyMedium!.copyWith(fontSize:14 ),
                 maxLines: 2,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 5,
               ),
               Text(
@@ -53,7 +53,7 @@ class NewsItem extends StatelessWidget {
                 overflow: TextOverflow.ellipsis,
                 maxLines: 1,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 5,
               ),
               Text(
@@ -63,7 +63,7 @@ class NewsItem extends StatelessWidget {
                     .bodySmall!
                     .copyWith(fontSize: 10, color: Colors.black87),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 5,
               ),
               Align(
@@ -74,7 +74,7 @@ class NewsItem extends StatelessWidget {
                   textAlign: TextAlign.end,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 5,
               ),
             ],
