@@ -1,7 +1,9 @@
+import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:news/bloc_observer.dart';
 import 'package:news/layout/home_layout.dart';
 import 'package:news/providers/my_provider.dart';
 import 'package:news/screens/news_details.dart';
@@ -11,6 +13,7 @@ import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
+  Bloc.observer=MyBlocObserver();
   runApp(ChangeNotifierProvider(
       create: (BuildContext context) => MyProvider(), builder: (context, child) =>  MyApp()));
 }
