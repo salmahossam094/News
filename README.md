@@ -1,16 +1,21 @@
-# news
+# News
 
-A new Flutter project.
+Application manages you to view News from different channels 
 
-## Getting Started
+## Application Features 
+● List daily news.
+● Filter daily news by category.
+● Refresh list daily news with pull to refresh style.
+● Go to detail news website.
+● Search news.
+● Dark mode support.
+## Features are implemented using:
+● https
+● Cubit
+● Url Launcher
+● Cached Network Image
+● Flutter ScreenUtil
+● Localizations (EN-AR)
+● Provider
+● Shared Preferences 
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
