@@ -3,7 +3,7 @@
 Application manages you to view News from different channels <br>
 
 # Application Features: <br>
-## ● List daily news.<br>
+### ● List daily news.<br>
 ## ● Filter daily news by category.<br>
 ## ● Refresh list daily news with pull to refresh style.<br>
 ## ● Go to detail news website.<br>
